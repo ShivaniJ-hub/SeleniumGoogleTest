@@ -29,7 +29,7 @@ public class TestClass {
     @Test
     public void googleTest() {
         google.goTo();
-        Assert.assertTrue(google.checkTitle("u"));
+        Assert.assertTrue(google.checkTitle("g"));
     }
     
     @AfterTest
