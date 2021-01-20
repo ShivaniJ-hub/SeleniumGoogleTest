@@ -21,7 +21,12 @@ public class TestClass {
 
     @BeforeTest
     public void setUp() throws MalformedURLException { 
-		driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), DesiredCapabilities.chrome());
+	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("headless");
+	options.addArguments("no-sandbox");
+	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+	driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
         google = new PageClass(driver);
     }
