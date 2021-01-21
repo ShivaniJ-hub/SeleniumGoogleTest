@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.main.page.PageClass;
 public class TestClass {
 
-	private WebDriver driver;
+    private WebDriver driver;
     private PageClass google;
 
     @BeforeTest
