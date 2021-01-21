@@ -21,7 +21,7 @@ public class PageClass {
     }
 
     public void goTo() {
-        this.driver.get("http://localhost:8081/music/index.html");
+        this.driver.get("http://127.0.0.1:8080/");
         System.out.println("Browser launched and navigated to Google");
     }
 
