@@ -21,7 +21,7 @@ public class PageClass {
     }
 
     public void goTo() {
-        this.driver.get("https://www.google.com");
+        this.driver.get("http://localhost:9090/MusicStore/");
         System.out.println("Browser launched and navigated to Google");
     }
 
