@@ -26,7 +26,7 @@ public class TestClass {
 	options.addArguments("headless");
 	options.addArguments("--disable-dev-shm-usage");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+	driver = new RemoteWebDriver(new URL("http://15.206.189.200:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
         google = new PageClass(driver);
     }
