@@ -25,6 +25,11 @@ public class TestClass {
 	ChromeOptions options = new ChromeOptions();
 	options.addArguments("headless");
 	options.addArguments("--disable-dev-shm-usage");
+	options.addArguments("disable-infobars"); // disabling infobars
+	options.addArguments("--disable-extensions"); // disabling extensions
+	options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+	options.addArguments("--no-sandbox"); // Bypass OS security model
+	options.addArguments("--remote-debugging-port=9222");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 	driver = new RemoteWebDriver(new URL("http://15.206.189.200:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
