@@ -38,7 +38,8 @@ public class TestClass {
     @Test
     public void googleTest() {
         google.goTo();
-        Assert.assertTrue(google.checkTitle("Store"));
+        //Assert.assertTrue(google.checkTitle("Store"));
+	Assert.assertTrue(google.checkTitle("Player"));
     }
     
     @AfterTest
