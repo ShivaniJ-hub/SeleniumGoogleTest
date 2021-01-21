@@ -27,7 +27,7 @@ public class TestClass {
 	options.addArguments("--disable-dev-shm-usage");
 	options.addArguments("--remote-debugging-port=5555");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-	driver = new RemoteWebDriver(new URL("http://172.31.7.80:4444/wd/hub"), capabilities);
+	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
         google = new PageClass(driver);
     }
