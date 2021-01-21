@@ -24,6 +24,7 @@ public class TestClass {
 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 	ChromeOptions options = new ChromeOptions();
 	options.addArguments("headless");
+	options.addArguments("--disable-dev-shm-usage");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 	driver = new RemoteWebDriver(new URL("http://172.31.7.80:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
