@@ -25,7 +25,7 @@ public class TestClass {
 	ChromeOptions options = new ChromeOptions();
 	options.addArguments("headless");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+	driver = new RemoteWebDriver(new URL("http://172.31.7.80:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
         google = new PageClass(driver);
     }
