@@ -22,7 +22,7 @@ public class PageClass {
 
     public void goTo() {
         //this.driver.get("http://172.31.7.80:9090/MusicStore/index.html");
-        this.driver.get("http://172.27.160.1:9090/MusicStore/index.html");
+        this.driver.get("http://devopsteamgoa.westindia.cloudapp.azure.com:9090/MusicStore/index.html");
         System.out.println("Browser launched and navigated to Google");
     }
 
