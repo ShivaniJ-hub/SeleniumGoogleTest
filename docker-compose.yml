@@ -27,6 +27,6 @@ services:
       - hub
     networks:
       - selenium
-  networks:
-    selenium:
-      name: selenium
+ networks:
+   selenium:
+     name: selenium
