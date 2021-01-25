@@ -8,7 +8,6 @@ services:
 
   chrome:
     image: selenium/node-chrome
-    container_name: web-automation_chrome
     depends_on:
       - hub
     environment:
