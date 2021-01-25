@@ -1,25 +1,29 @@
-version: "3"
+version: "2.4"
 services:
-
-  hub:
+  selenium-hub:
     image: selenium/hub
+    container_name: selenium-hub
     ports:
       - "4444:4444"
     environment:
       - GRID_TIMEOUT=240000
       - GRID_BROWSER_TIMEOUT=240000
-
+    networks:
+      - selenium
   chrome:
     image: selenium/node-chrome
+    volumes:
+      - /dev/shm:/dev/shm
     depends_on:
-      - hub
+      - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
       - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
-    volumes:
-      - /dev/shm:/dev/shm
     ports:
       - "5900"
-    links:
-      - hub
+    networks:
+      - selenium
+networks:
+  selenium:
+    name: selenium
