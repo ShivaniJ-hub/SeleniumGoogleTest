@@ -30,7 +30,7 @@ public class TestClass {
 	//options.addArguments("no-sandbox"); // Bypass OS security model
 	//options.addArguments("remote-debugging-port=9222");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-	driver = new RemoteWebDriver(new URL("http://devopsteamgoa.westindia.cloudapp.azure.com:4444/wd/hub"), capabilities);
+	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
         google = new PageClass(driver);
     }
