@@ -8,8 +8,6 @@ services:
     environment:
       - GRID_TIMEOUT=240000
       - GRID_BROWSER_TIMEOUT=240000
-    networks:
-      - selenium
 
   chrome:
     image: selenium/node-chrome
@@ -25,8 +23,3 @@ services:
       - "5900"
     links:
       - hub
-    networks:
-      - selenium
- networks:
-   selenium:
-     name: selenium
