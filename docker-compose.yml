@@ -5,17 +5,28 @@ services:
     image: selenium/hub
     ports:
       - "4444:4444"
+    environment:
+      - GRID_TIMEOUT=240000
+      - GRID_BROWSER_TIMEOUT=240000
+    networks:
+      - selenium
 
   chrome:
     image: selenium/node-chrome
     depends_on:
       - hub
     environment:
-      HUB_PORT_4444_TCP_ADDR: hub
-      HUB_PORT_4444_TCP_PORT: 4444
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - JAVA_OPTS=-Dwebdriver.chrome.whitelistedIps=
     volumes:
       - /dev/shm:/dev/shm
     ports:
-      - "9001:5900"
+      - "5900"
     links:
       - hub
+    networks:
+      - selenium
+  networks:
+    selenium:
+      name: selenium
