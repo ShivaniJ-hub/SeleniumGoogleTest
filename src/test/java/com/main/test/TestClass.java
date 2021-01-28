@@ -15,6 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.main.page.PageClass;
 import com.google.common.util.concurrent.Uninterruptibles;
+import java.util.concurrent.TimeUnit;
 public class TestClass {
 
     private WebDriver driver;
