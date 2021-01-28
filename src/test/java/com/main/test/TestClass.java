@@ -18,17 +18,21 @@ public class TestClass {
 
     private WebDriver driver;
     private PageClass google;
+    @BeforeSuite
+    public void initialDelay(){
+        //intentionally added this as chrome/firefox containers take few ms to register
+        //to hub - test fails saying hub does not have node!!
+        //very rare
+        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+        
+    }
 
     @BeforeTest
     public void setUp() throws MalformedURLException { 
+	System.out.println("before test"); 
 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 	ChromeOptions options = new ChromeOptions();
 	options.addArguments("headless");
-	//options.addArguments("disable-infobars"); // disabling infobars
-	//options.addArguments("disable-extensions"); // disabling extensions
-	//options.addArguments("disable-dev-shm-usage"); // overcome limited resource problems
-	//options.addArguments("no-sandbox"); // Bypass OS security model
-	//options.addArguments("remote-debugging-port=9222");
 	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
         driver.manage().window().maximize();
