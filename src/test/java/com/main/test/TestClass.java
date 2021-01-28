@@ -1,5 +1,5 @@
 package com.main.test;
-
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.main.page.PageClass;
+import com.google.common.util.concurrent.Uninterruptibles;
 public class TestClass {
 
     private WebDriver driver;
